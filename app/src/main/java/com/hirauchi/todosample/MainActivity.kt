@@ -10,11 +10,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //ToolbarをActionVarに設定setSupportActionBar
         toolbar.also {
-            it.setTitleTextColor(getColor(R.color.white))
+            it.setTitleTextColor(getColor(R.color.white)) //Accentにしてみた
             setSupportActionBar(it)
         }
-
+        //Fragmentの表示
+        //FragmentTransactionの、replace()に、FrameLayoutのIDと、MainFragmentを指定し、
+        // MainFragmentを表示するよう実装
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.contentFrame, MainFragment.newInstance())
         }.commit()

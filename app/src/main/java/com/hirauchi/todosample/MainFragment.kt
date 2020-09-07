@@ -13,12 +13,16 @@ import kotlinx.android.synthetic.main.fragment_main.*
 class MainFragment : Fragment(), TaskContract.View {
 
     private lateinit var adapter: TasksAdapter
+    //Presenter経由でデータベースにアクセスするよう修正
     private lateinit var presenter: TaskPresenter
 
+    //1,空のフラグメント作成
+    //companion(staticの代わり) objectで、Singletonを作成することができる
     companion object {
         fun newInstance() = MainFragment()
     }
-
+    //1,空のフラグメント作成
+    //onCreateView()にて、fragment_main.xmlをレイアウトに設定
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
@@ -31,10 +35,12 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     adapter = TasksAdapter(itemListener)
     listView.adapter = adapter
 
+    //TaskDatabase.getInstance(context)で、TaskDatabaseを取得
     val db = TaskDatabase.getInstance(context)
     presenter = TaskPresenter(TaskRepository(db.taskDao()), this)
     presenter.loadTasks()
 
+    //FABをタップするとタスク追加の処理をする
     addTaskButton.setOnClickListener {
         val editText = EditText(context).apply {
             layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
@@ -55,12 +61,14 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
             .show()
     }
 }
-
+//TaskItemListenerをimplementしたobjectを作成
+// Callbackをoverrideして、イベント発生時に行いたい処理を実装
     val itemListener = object : TaskItemListener {
         override fun onStateClick(task: Task) {
             presenter.updateTaskState(task)
         }
 
+    //onDescriptionClick()はTaskの内容がタップされた際に呼ばれる
         override fun onDescriptionClick(task: Task) {
             val context = context?: return
 
@@ -97,8 +105,14 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
+    //ListViewのAdapterを実装
+    //TODOやDONEなどの状態を表示するためのTextView、
+    //タスクの内容を表示するためのTextView、
+    //タスクを削除するためのボタンとなるImageView
     private class TasksAdapter(private val listener: TaskItemListener): BaseAdapter() {
 
+        //Taskが追加された際に、リストが更新されるよう、TasksAdapterクラスにセッターを追加します。
+        //TasksAdapterのtasksが更新されると、notifyDataSetChanged()が呼ばれ、リストが更新されるよう実装されております
         var tasks: List<Task> = listOf()
             set(tasks) {
                 field = tasks
@@ -141,6 +155,8 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         }
     }
 
+    //TaskItemListenerというInterfaceを実装
+    //リストの状態表示、内容、削除ボタンがタップされた際のイベントをそれぞれ実装
     interface TaskItemListener {
 
         fun onStateClick(task: Task)

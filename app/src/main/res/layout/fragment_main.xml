@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--        FABを画面右下に固定表示させるため、LinearLayoutからRelativeLayoutに変更-->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -9,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+<!--    FABを実装-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addTaskButton"
             android:layout_width="wrap_content"

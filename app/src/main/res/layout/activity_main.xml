@@ -7,12 +7,13 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+<!--    Toolbarの実装-->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary" />
-
+        android:background="@color/colorAccent" />
+<!--    FrameLayoutを追加-->
     <FrameLayout
         android:id="@+id/contentFrame"
         android:layout_width="match_parent"
