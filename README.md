@@ -2,6 +2,6 @@
 TestVideo
 https://www.youtube.com/watch?v=UclMypGjUfA
 
-##🗻Tech
+## 🗻Tech
 - Kotlin
 - SQLite
