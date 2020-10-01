@@ -4,8 +4,8 @@
 https://www.youtube.com/watch?v=UclMypGjUfA
 
 ## 🗻Tech
-- Kotlin
-- SQLite
+- 開発言語：Kotlin
+- DB言語：SQLite
 
 ## ❓About app
 
