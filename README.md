@@ -3,5 +3,5 @@ TestVideo
 https://www.youtube.com/watch?v=UclMypGjUfA
 
 ##🗻Tech
--Kotlin
--SQLite
+- Kotlin
+- SQLite
