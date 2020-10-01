@@ -1,4 +1,4 @@
-俺のToDo
-🗻Tech
-Kotlin
-SQLite
+# 俺のToDo
+##🗻Tech
+-Kotlin
+-SQLite
