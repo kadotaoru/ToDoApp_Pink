@@ -18,6 +18,10 @@ https://www.youtube.com/watch?v=UclMypGjUfA
 - タスクの状況を記録するとモチベーションUPの機会が増えて長期のタスクを継続しやすいくするため
 
 
+
+
+
+
 ## 🔧機能概要
 
 - Fragmentの活用
