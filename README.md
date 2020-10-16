@@ -18,8 +18,5 @@ https://www.youtube.com/watch?v=UclMypGjUfA
 ### 📱WEB
 - 
 
-### 📪クライアント（予定）
--
-
 
 
