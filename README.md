@@ -9,8 +9,8 @@ https://www.youtube.com/watch?v=UclMypGjUfA
 
 ## 📱About App
 
-- 自分のタスクの明確化
-- 自分のタスクの進捗状況の見える化「ToDo(作業開始前), Doing(作業中), Done(完了)」
+- タスクの明確化
+- タスクの進捗状況の見える化「ToDo(作業開始前), Doing(作業中), Done(完了)」の3段階
 
 ## ❓きっかけ
 
