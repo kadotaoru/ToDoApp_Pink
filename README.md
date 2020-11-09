@@ -3,7 +3,7 @@
 
 https://www.youtube.com/watch?v=UclMypGjUfA
 
-## 🗻Tech
+## 🗻Tech　
 - 開発言語：Kotlin
 - DB言語：SQLite
 
